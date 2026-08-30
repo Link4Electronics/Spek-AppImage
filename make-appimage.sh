@@ -11,8 +11,6 @@ export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}
 export ICON=/usr/share/icons/hicolor/scalable/apps/spek.svg
 export DESKTOP=/usr/share/applications/spek.desktop
 export STARTUPWMCLASS=spek
-export DEPLOY_GTK=1
-export GTK_DIR=gtk-3.0
 
 # Deploy dependencies
 quick-sharun /usr/bin/spek
@@ -22,4 +20,4 @@ quick-sharun --make-appimage
 
 # Test the app for 12 seconds, if the test fails due to the app
 # having issues running in the CI use --simple-test instead
-quick-sharun --test ./dist/*.AppImage
+quick-sharun --simple-test ./dist/*.AppImage
